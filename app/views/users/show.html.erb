@@ -17,8 +17,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/fellows/new">Submit a Story<span class="sr-only">(current)</span></a></li>
-        <li><a href="/list/show">View Stories</a></li>
+        <li><a href="/stories/new">Submit a Story<span class="sr-only">(current)</span></a></li>
+        <li><a href="/users/show">View Stories</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Previous Newsletters <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -49,20 +49,20 @@
 <table class="table-bordered">
 <thead>
       <tr>
-        <th>Fellow Name</th>
-        <th>City or Program</th>
         <th>Story</th>
-        <th>Picture</th>
+        <th>Category</th>
+        <th>Reflection</th>
+        <th>Image</th>
         <th>Caption</th>
       </tr>
     </thead>
 <tbody.table-hover>
       <tr>
-      <% @fellows.each do |f| %>
-        <td><%= f.full_name %></td>
-        <td><%= f.city_or_program %> </td>
+      <% @story.each do |f| %>
         <td><%= f.story %> </td>
-        <td><%= image_tag f.picture.url, width: 500 %></td>
+        <td><%= f.category %> </td>
+        <td><%= f.reflection %> </td>
+        <td><%= image_tag f.image.url %> </td>
         <td><%= f.caption %></td>
       </tr>
       <% end %><br><hr>
