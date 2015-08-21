@@ -9,6 +9,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(user_params)
+      # params.require(:location).permit(:fellow)
     
     ENV['aws_key']
 
@@ -28,5 +29,5 @@ end
 private
 
   def user_params
-      params.require(:story).permit(:story, :category, :image, :caption, :reflection)
+      params.require(:story).permit(:story, :category, :image, :caption, :reflection, :user_id)
   end

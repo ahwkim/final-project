@@ -46,11 +46,11 @@
   <h1>Submit your story here</h1><hr>
   <div class="centered">
     <img src="http://i.imgur.com/ZUqrmG6.png" width= "500"><br><br><br>
-    <p1>Please select your city or program:</p1><br>
-    <%= select("post", "user_id", User.all.collect {|p| [ p.fellow ] }, {include_blank: 'None'}) %>
   </div><br><br>
   
   <%= bootstrap_form_for(@story, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+
+  <%= f.collection_select(:user_id, @users, :id, :fellow, {:include_blank => "Please select"}) %>
 
   <%= f.text_field :category, help:"Choose the Primary USF Campaign Affiliation." %>
 
@@ -64,7 +64,7 @@
 
   <%= f.submit 'Submit' %>
   
-<% end %>
+  <% end %>
   <br><br>
 
 </div>

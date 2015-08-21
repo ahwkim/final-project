@@ -49,6 +49,7 @@
 <table class="table table-striped">
 <thead>
       <tr>
+        <th>City or Program</th>
         <th>Story</th>
         <th>Category</th>
         <th>Reflection</th>
@@ -59,6 +60,7 @@
 <tbody.table-hover>
       <tr>
       <% @story.each do |f| %>
+        <td><%= f.user_id %> </td>
         <td><%= f.story %> </td>
         <td><%= f.category %> </td>
         <td><%= f.reflection %> </td>
