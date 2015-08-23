@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   
-  has_one :story
+  has_many :story
 
   
 end
