@@ -60,7 +60,7 @@
 <tbody.table-hover>
       <tr>
       <% @story.each do |f| %>
-        <td><%= @user[f.user_id].fellow.to_s %></td>
+        <td><%= @user[f.user_id - 1].fellow.to_s %></td>
         <td><%= f.story %> </td>
         <td><%= f.category %> </td>
         <td><%= f.reflection %> </td>
